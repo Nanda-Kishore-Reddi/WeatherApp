@@ -19,7 +19,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './dist/index.html', // Path to your HTML template
+            template: './index.html', // Path to your HTML template
         }),
     ],
     devServer: {
