@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="weather-container">
+    <h1>Weather Forecast</h1>
+    <form id="weather-form">
+      <input type="text" id="location" placeholder="Enter location" required>
+      <button type="submit">Get Weather</button>
+    </form>
+
+    <div id="loading" class="hidden">Loading...</div>
+
+    <div id="weather-info" class="hidden">
+      <h2>Weather in <span id="city-name"></span></h2>
+      <p>Temperature: <span id="temp"></span></p>
+      <p>Condition: <span id="condition"></span></p>
+      <p>Humidity: <span id="humidity"></span></p>
+      <div id="weather-gif"></div>
+    </div>
+
+    <div id="hourly-forecast" class="hidden">
+      <h2>Hourly Forecast</h2>
+      <div class="forecast-container" id="hourly-container"></div>
+    </div>
+
+    <div id="daily-forecast" class="hidden">
+      <h2>Daily Forecast</h2>
+      <div class="forecast-container" id="daily-container"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
