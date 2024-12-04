@@ -10,13 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./main.js":
-/*!*****************!*\
-  !*** ./main.js ***!
-  \*****************/
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./style.css\");\n\r\n\r\nconst form = document.getElementById('weather-form');\r\nconst locationInput = document.getElementById('location');\r\nconst weatherInfo = document.getElementById('weather-info');\r\nconst loading = document.getElementById('loading');\r\nconst cityName = document.getElementById('city-name');\r\nconst tempElement = document.getElementById('temp');\r\nconst conditionElement = document.getElementById('condition');\r\nconst humidityElement = document.getElementById('humidity');\r\nconst weatherGif = document.getElementById('weather-gif');\r\n\r\n\r\nconst weatherApiKey = 'df593b7fb74e80356d67edf1c8c500b6';\r\n\r\n\r\nconst weatherBaseUrl = 'https://api.openweathermap.org/data/2.5/weather';\r\n\r\n\r\nasync function getWeather(location) {\r\n  try {\r\n    const response = await fetch(\r\n      `${weatherBaseUrl}?q=${location}&units=metric&appid=${weatherApiKey}`\r\n    );\r\n    const data = await response.json();\r\n\r\n    if (data.cod !== 200) {\r\n      alert('Location not found!');\r\n      return;\r\n    }\r\n\r\n    \r\n    const temperature = data.main.temp;\r\n    const condition = data.weather[0].description;\r\n    const humidity = data.main.humidity;\r\n    const city = data.name;\r\n\r\n    \r\n    cityName.textContent = city;\r\n    tempElement.textContent = `${temperature}°C`;\r\n    conditionElement.textContent = condition;\r\n    humidityElement.textContent = `${humidity}%`;\r\n\r\n    \r\n    loading.classList.add('hidden');\r\n    weatherInfo.classList.remove('hidden');\r\n\r\n    \r\n  } catch (error) {\r\n    console.error('Error fetching weather data:', error);\r\n    alert('An error occurred while fetching the weather data');\r\n  }\r\n}\r\n\r\nform.addEventListener('submit', (e) => {\r\n  e.preventDefault();\r\n\r\n  const location = locationInput.value.trim();\r\n\r\n  if (location) {\r\n    loading.classList.remove('hidden');\r\n    weatherInfo.classList.add('hidden');\r\n    getWeather(location);\r\n  }\r\n});\n\n//# sourceURL=webpack:///./main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./style.css\");\n\r\n\r\nconst form = document.getElementById('weather-form');\r\nconst locationInput = document.getElementById('location');\r\nconst weatherInfo = document.getElementById('weather-info');\r\nconst loading = document.getElementById('loading');\r\nconst cityName = document.getElementById('city-name');\r\nconst tempElement = document.getElementById('temp');\r\nconst conditionElement = document.getElementById('condition');\r\nconst humidityElement = document.getElementById('humidity');\r\nconst weatherGif = document.getElementById('weather-gif');\r\n\r\n\r\nconst weatherApiKey = 'df593b7fb74e80356d67edf1c8c500b6';\r\n\r\n\r\nconst weatherBaseUrl = 'https://api.openweathermap.org/data/2.5/weather';\r\n\r\n\r\nasync function getWeather(location) {\r\n  try {\r\n    const response = await fetch(\r\n      `${weatherBaseUrl}?q=${location}&units=metric&appid=${weatherApiKey}`\r\n    );\r\n    const data = await response.json();\r\n\r\n    if (data.cod !== 200) {\r\n      alert('Location not found!');\r\n      return;\r\n    }\r\n\r\n    \r\n    const temperature = data.main.temp;\r\n    const condition = data.weather[0].description;\r\n    const humidity = data.main.humidity;\r\n    const city = data.name;\r\n\r\n    \r\n    cityName.textContent = city;\r\n    tempElement.textContent = `${temperature}°C`;\r\n    conditionElement.textContent = condition;\r\n    humidityElement.textContent = `${humidity}%`;\r\n\r\n    \r\n    loading.classList.add('hidden');\r\n    weatherInfo.classList.remove('hidden');\r\n\r\n    \r\n  } catch (error) {\r\n    console.error('Error fetching weather data:', error);\r\n    alert('An error occurred while fetching the weather data');\r\n  }\r\n}\r\n\r\nform.addEventListener('submit', (e) => {\r\n  e.preventDefault();\r\n\r\n  const location = locationInput.value.trim();\r\n\r\n  if (location) {\r\n    loading.classList.remove('hidden');\r\n    weatherInfo.classList.add('hidden');\r\n    getWeather(location);\r\n  }\r\n});\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -197,7 +197,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./index.js");
 /******/ 	
 /******/ })()
 ;
