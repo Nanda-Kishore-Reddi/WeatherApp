@@ -103,8 +103,6 @@ form.addEventListener('submit', (e) => {
   if (location) {
     loading.classList.remove('hidden');
     weatherInfo.classList.add('hidden');
-    hourlyContainer.innerHTML = ''; // Reset hourly forecast
-    dailyContainer.innerHTML = ''; // Reset daily forecast
     getWeather(location);
   }
 });
